@@ -4,4 +4,5 @@ from appmain import views
 
 urlpatterns = [
     path('', views.home, name="home"),
+    path('passwords/', views.passwords, name="passwords")
 ]

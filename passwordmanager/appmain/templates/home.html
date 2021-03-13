@@ -12,6 +12,30 @@ h1 {
 
 <div class="container">
     <div class="h1 text-center my-4">Manage all your passwords here!</div>
+
+    <form method="POST" action="passwords/" class="form-group">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="account" class="form-label">Account</label>
+            <input type="text" class="form-control" name="account" id="account" aria-describedby="account">
+          </div>
+          <div class="mb-3">
+            <label for="text" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="username" aria-describedby="username">
+          </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="text" class="form-control" name="password" id="password">
+        </div>
+
+        <button type="submit" class="btn btn-success">Add to the database!</button>
+      </form>
+
+      <div class="container text-center my-3" style="font-size: larger;">
+      <a href="passwords/">See my passwords</a>
+      </div>
+
+      
 </div>
 
 {% endblock %}
