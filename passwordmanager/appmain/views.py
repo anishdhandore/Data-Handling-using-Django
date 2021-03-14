@@ -23,19 +23,18 @@ def passwords(request):
         usernames = Password.objects.values('username')
         passwords = Password.objects.values('password')
 
-        list1 = [i['account'] for i in accounts]
-        list2 = [i['username'] for i in usernames]
-        list3 = [i['password'] for i in passwords]
+        acclist = [i['account'] for i in accounts]
+        userlist = [i['username'] for i in usernames]
+        passlist = [i['password'] for i in passwords]
         
-        emptylist = []
+        allpasslist = []
         # print(list1)
-        for x,y,z in zip(list1, list2, list3):
-            emptylist.append([x,y,z])
+        for acc,users,pas in zip(acclist, userlist, passlist):
+            allpasslist.append([acc,users,pas])
 
-        print(emptylist)
+        print(allpasslist)
 
-        parameters = {'all_pass': emptylist}
-        password == None
+        parameters = {'all_pass': allpasslist}
         return render(request, 'passwords.html', context=parameters)
 
     else:
@@ -43,16 +42,16 @@ def passwords(request):
         usernames = Password.objects.values('username')
         passwords = Password.objects.values('password')
 
-        list1 = [i['account'] for i in accounts]
-        list2 = [i['username'] for i in usernames]
-        list3 = [i['password'] for i in passwords]
+        acclist = [i['account'] for i in accounts]
+        userlist = [i['username'] for i in usernames]
+        passlist = [i['password'] for i in passwords]
         
-        emptylist = []
+        allpasslist = []
         # print(list1)
-        for x,y,z in zip(list1, list2, list3):
-            emptylist.append([x,y,z])
+        for acc,users,pas in zip(acclist, userlist, passlist):
+            allpasslist.append([acc,users,pas])
 
-        print(emptylist)
+        print(allpasslist)
 
-        parameters = {'all_pass': emptylist}
+        parameters = {'all_pass': allpasslist}
         return render(request, 'passwords.html', context=parameters)
